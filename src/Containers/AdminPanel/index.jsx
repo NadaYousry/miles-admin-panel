@@ -140,7 +140,7 @@ const AdminPanel = () => {
             </ItemsContext.Provider>
           </Suspense>
         </Route>
-        <Redirect exact from="/miles-admin-panel" to="admin/about " />
+        <Redirect exact from="/miles-admin-panel" to="admin/about" />
       </Switch>
     </div>
   );
