@@ -97,13 +97,13 @@
 }
 .btn-primary.white:not(:disabled):not(.disabled):active:focus,
 .btn-primary.btn-primary:not(:disabled):not(.disabled):active:focus {
-  box-shadow: 0 0 0 0.2rem var(--white) !important;
+  box-shadow: none !important;
   color: var(--black);
 }
 .btn-primary:not(:disabled):not(.disabled):active:focus,
 .btn-primary:not(:disabled):not(.disabled).active:focus,
 .show > .btn-primary.dropdown-toggle:focus {
-  box-shadow: 0 0 0 0.2rem var(--white) !important;
+  box-shadow: none !important;
   color: var(--black);
 }
 /* black */

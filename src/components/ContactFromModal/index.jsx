@@ -239,7 +239,7 @@ const ContactFromModal = ({ handleClose, openModal }) => {
             </Modal.Footer>
           </Form.Group>
         </Form>
-      </>
+      </> 
     );
   };
   const renderSucessMessage = () => {

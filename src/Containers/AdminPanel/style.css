@@ -18,6 +18,9 @@
 .admin-panel-container .navbar {
   border-color: var(--white);
 }
+.admin-panel-container .btn {
+  font-size: 00.75rem !important;
+}
 .admin-panel-container .group-lessons-check-box .time-date-container .badge {
   margin-right: 5%;
 }

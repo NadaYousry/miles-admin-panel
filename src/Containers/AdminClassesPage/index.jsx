@@ -5,22 +5,34 @@ import { faUserAlt, faPlus } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import DropDownMenu from "../../components/DropDownMenu";
 import ButtonComponent from "../../components/Button";
+import DatePicker from "react-datepicker";
+
+import "react-datepicker/dist/react-datepicker.css";
 import "./style.css";
 import AddClassFromModal from "../../components/AddClassFromModal";
-import { ColumnContext, ItemsContext } from "../AdminPanel";
+import { ColumnContext } from "../AdminPanel";
+import CheckBoxStyledWithLabel from "../../components/CheckBoxStyledWithLabel";
 
 function AdminClassesPage() {
   const [openModal, setOpenModal] = useState(false);
-  const [selectedName, setSelectedName] = useState(false);
+  const [selectedName, setSelectedName] = useState("");
+  const [selectedStatusName, setSelectedStatusName] = useState("");
+  const [startDate, setStartDate] = useState(new Date());
+
   const handleCloseModal = () => setOpenModal(false);
   const handleOpenModal = () => setOpenModal(true);
   let [columnsFromBackend, setColumnsFromBackend] = useContext(ColumnContext);
   const [columns, setColumns] = useState(columnsFromBackend);
   const [isDragged, setIsDragged] = useState(false);
   const selectStatus = [
-    { option: "Active" },
-    { option: "Soon" },
-    { option: "Completed" },
+    { color: "#6abf48", option: "Active" },
+    { color: "#ebef04", option: "Soon" },
+    { color: "#d80c05", option: "Completed" },
+  ];
+  const selectActivities = [
+    { option: "Tennis" },
+    { option: "Pilate" },
+    { option: "Fitness" },
   ];
   useEffect(() => {
     setColumns(columnsFromBackend);
@@ -71,25 +83,83 @@ function AdminClassesPage() {
   return (
     <>
       <section className="container drag-and-drop-container">
-        <div className="controls">
-          <div className={"add-new-task"}>
-            <ButtonComponent
-              theme={"green"}
-              text={`Add New Class`}
-              icon={<FontAwesomeIcon icon={faPlus} className=" mr-2" />}
-              onClickButton={handleOpenModal}
-            />
+        <div className="controls row">
+          <div className="add-container col-12 col-lg-4 col-md-4 mb-2">
+            <div className={"add-new-task"}>
+              <ButtonComponent
+                theme={"green"}
+                text={`Add New Class`}
+                icon={<FontAwesomeIcon icon={faPlus} className=" mr-2" />}
+                onClickButton={handleOpenModal}
+              />
+            </div>
           </div>
-          <div className="sort">
-            <DropdownButton id="dropdown-item-button" title={selectedName?selectedName :"Sort"}>
-              {selectStatus.map((option, index) => {
-                return (
-                  <div key={index}>
-                    <Dropdown.Item as="li" onClick={()=>{setSelectedName(option.option)}}>{option.option}</Dropdown.Item>
-                  </div>
-                );
-              })}
-            </DropdownButton>
+
+          <div className="filter-container col-12 col-md-5 col-lg-5 d-flex">
+            <p>filter: </p>
+            <div className="dropDown-menu">
+              <DatePicker
+                className="dropdown-toggle btn btn-primary date-picker"
+                selected={startDate}
+                onChange={(date) => setStartDate(date)}
+                isClearable
+                placeholderText="Select Day"
+              />
+            </div>
+            <div className="dropDown-menu">
+              <DropdownButton
+                id="dropdown-item-button"
+                drop="down"
+                title={selectedName ? selectedName : "Activity"}
+              >
+                {selectActivities.map((option, index) => {
+                  return (
+                    <div key={index}>
+                      <Dropdown.Item
+                        as="li"
+                        onClick={() => {
+                          setSelectedName(option.option);
+                        }}
+                        className="dropDown-list"
+                      >
+                        <span> {option.option}</span>
+                      </Dropdown.Item>
+                    </div>
+                  );
+                })}
+              </DropdownButton>
+            </div>
+          </div>
+          <div className="sort col-12 col-lg-3 col-md-3 d-flex">
+            <p>sort: </p>
+            <div className="dropDown-menu">
+              <DropdownButton
+                id="dropdown-item-button"
+                title={selectedStatusName ? selectedStatusName : "Status"}
+              >
+                {selectStatus.map((option, index) => {
+                  return (
+                    <div key={index}>
+                      <Dropdown.Item
+                        as="li"
+                        onClick={() => {
+                          setSelectedStatusName(option.option);
+                        }}
+                        className="dropDown-list"
+                      >
+                        <span
+                          className="circle d-inline-block"
+                          style={{
+                            backgroundColor: option.color,
+                          }}
+                        ></span>
+                        <span> {option.option}</span>
+                      </Dropdown.Item>
+                    </div>
+                  );
+                })}
+              </DropdownButton>
+            </div>
           </div>
         </div>
         <div
@@ -116,7 +186,7 @@ function AdminClassesPage() {
                   }}
                   key={columnId}
                 >
-                  <div style={{ marginLeft: 8  , marginRight:8}}>
+                  <div style={{ marginLeft: 8, marginRight: 8 }}>
                     <Droppable droppableId={columnId} key={columnId}>
                       {(provided, snapshot) => {
                         return (
@@ -170,7 +240,7 @@ function AdminClassesPage() {
                                             ...provided.draggableProps.style,
                                           }}
                                         >
-                                          <div className="mb-2 d-flex align-items-start justify-content-between">
+                                          <div className="mb-0 d-flex align-items-start justify-content-between">
                                             <p className="name mb-0">
                                               {item.name}
                                             </p>
@@ -186,7 +256,21 @@ function AdminClassesPage() {
                                                     : "#ebef04",
                                               }}
                                             ></div>
+                                            
                                           </div>
+                                          <div className="mb-2 d-flex align-items-start justify-content-between">
+                                            <div className="time-and-date">
+                                              <p className="mb-0">{item.date}</p>
+                                              <p className="mb-0">{item.time}</p>
+                                            </div>
+                                          <CheckBoxStyledWithLabel
+                                              showOptions={false}
+                                              option={item.id}
+                                              name="status"
+                                              type="checkbox"
+                                            />
+                                          </div>
+                                          
                                           <div className="mb-2">
                                             <span className="place">
                                               {item.place}
@@ -198,6 +282,7 @@ function AdminClassesPage() {
                                                 icon={faUserAlt}
                                                 className=" mr-2"
                                               />
+                                              <p className="price mr-2">{item.registration_count}</p>
                                               <p className="price">{`${item.price}$`}</p>
                                             </div>
                                             <div className="setting">
