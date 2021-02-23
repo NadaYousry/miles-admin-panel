@@ -1,2 +1,0 @@
-(this["webpackJsonpmiles-admin-panel"]=this["webpackJsonpmiles-admin-panel"]||[]).push([[11],{152:function(e,i,s){"use strict";s.r(i);s(1);var n=s(80),c=s(0);i.default=function(e){var i=e.isMobileScreen;return Object(c.jsx)(c.Fragment,{children:Object(c.jsx)("div",{className:"row",children:Object(c.jsx)("div",{className:"col-12  px-1 mb-2",children:Object(c.jsx)(n.a,{find:!0,isMobileScreen:i})})})})}}}]);
-//# sourceMappingURL=11.da12f203.chunk.js.map
