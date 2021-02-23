@@ -88,6 +88,8 @@ h3.Completed {
   width: 100%;
   margin-left: 1%;
   text-align: left;
+  margin-top: 0;
+  margin-bottom: 0;
 }
 .date-picker::placeholder {
   color: var(--black);
