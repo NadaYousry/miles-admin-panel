@@ -1,6 +1,6 @@
 @import "./../../generalStyles/variables.css";
 .admin-panel-container {
-  padding-top: 5% !important;
+  padding-top: 2% !important;
   padding-bottom: 5% !important;
 }
 .group-lessons-container .card-header {
@@ -14,6 +14,9 @@
   position: absolute;
   left: 95%;
   top: 0;
+}
+.admin-panel-container .navbar {
+  border-color: var(--white);
 }
 .admin-panel-container .group-lessons-check-box .time-date-container .badge {
   margin-right: 5%;

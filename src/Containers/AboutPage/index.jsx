@@ -66,7 +66,7 @@ const AboutPage = ({ isMobileScreen }) => {
   ];
   return (
     <>
-      <section className="row  section-separator mb-5">
+      <section className="row  section-separator mb-3 pb-3">
         <div
           className={`col-12 col-md-12 col-lg-6 mb-5${
             !isMobileScreen ? "section-separator-right" : ""
@@ -130,7 +130,7 @@ const AboutPage = ({ isMobileScreen }) => {
           <ReviewCardContainer isMobileScreen={isMobileScreen} />
         </div>
       </section>
-      <section className="row section-separator p-0 pb-5 mb-5">
+      <section className="row section-separator p-0 pb-1 mb-3">
         <div className="col-12 col-md-12 col-lg-12">
           <h2 className="sub-heading text-left mb-3">Featured</h2>
           <div className="review-container">
@@ -142,7 +142,7 @@ const AboutPage = ({ isMobileScreen }) => {
           </div>
         </div>
       </section>
-      <section className="row section-separator  pb-5">
+      <section className="row section-separator  pb-3">
         <div className="col-12 col-md-12 col-lg-12">
           <h2 className="sub-heading text-left mb-3">FAQ</h2>
           <div className="faq-container">

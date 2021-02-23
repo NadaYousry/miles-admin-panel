@@ -13,3 +13,8 @@
   font-size: 5rem;
   color: var(--green);
 }
+@media screen and (max-width: 425px) {
+  .message h4 {
+    font-size: 1.2rem;
+  }
+}

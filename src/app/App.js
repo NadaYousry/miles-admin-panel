@@ -5,7 +5,6 @@ import history from "./history";
 import NavBar from "../components/Navbar";
 import { useEffect, useState } from "react";
 import Footer from "../components/Footer";
-import AdminPanel from "../Containers/AdminPanel";
 import useWindowResize from "../cutomHooks/useWindowResize";
 
 function App() {
@@ -13,8 +12,7 @@ function App() {
   return (
     <div className="App">
       <NavBar isMobileScreen={isMobileScreen} />
-      {/* <Router history={history}>{Routes}</Router> */}
-      <AdminPanel/>
+      <Router history={history}>{Routes}</Router>
       <Footer />
     </div>
   );

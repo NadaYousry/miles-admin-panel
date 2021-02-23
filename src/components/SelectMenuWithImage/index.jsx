@@ -6,51 +6,8 @@ import Coach5 from "../../assets/images/coachs/5.png";
 import Coach3 from "../../assets/images/coachs/3.png";
 import CircleedImageContainer from "../CircleedIconContainer copy";
 import "./style.css";
-const SelectMenuWithImage = () => {
+const SelectMenuWithImage = ({coachs}) => {
   
-  const coachs = [
-    {
-      coachName: "Peter Andrews",
-      id: 1,
-      image: Coach1,
-    },
-    {
-      coachName: "Jeff Bridges",
-      id: 2,
-      image: Coach2,
-    },
-    {
-      coachName: "Miles Blackman",
-      id: 3,
-      image: Coach3,
-    },
-    {
-      coachName: "Miles Blackman",
-      id: 4,
-      image: Coach3,
-    },
-    {
-      coachName: "Jeff Bridges",
-      id: 5,
-      image: Coach5,
-    },
-    {
-      coachName: "Peter Andrews",
-      id: 6,
-      image: Coach2,
-    },
-    {
-      coachName: "Jeff Bridges",
-      id: 7,
-      image: Coach2,
-    },
-    {
-      coachName: "Jeff Bridges",
-      id: 8,
-      image: Coach1,
-    },
-  ];
-
   return (
     <>
       <DropdownButton title="Select Coach">

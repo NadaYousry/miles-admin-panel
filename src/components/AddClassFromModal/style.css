@@ -1,0 +1,87 @@
+@import "./../../generalStyles/variables.css";
+.contact-form .single-check-box-row {
+  border: none;
+}
+
+.contact-form .checkbox-form-group input:checked + label:after {
+  left: 1%;
+}
+
+.contact-form .checkbox-form-group label:before {
+  left: 0%;
+  background-color: var(--baleWhite);
+  border: 1px solid var(--green);
+}
+
+.contact-form .checkbox-form-group label span {
+  margin-left: 2px;
+}
+.contact-form .form-data {
+  margin-bottom: 3%;
+}
+.contact-form .checkbox-form-group {
+  padding: 0.5% 0%;
+}
+
+.contact-form,
+.contact-form input {
+  font-size: 0.9rem;
+}
+
+.contact-form .modal-header h3:after {
+  content: "";
+  display: block;
+  position: relative;
+  left: 0%;
+  height: 3px;
+  width: 40px;
+  background-color: var(--green);
+}
+.contact-form .form-label {
+  font-size: 0.85rem;
+  letter-spacing: 0.03rem;
+}
+.loading-modal-container {
+  padding: 15%;
+}
+.loading-modal-container .loader-container {
+  position: relative;
+}
+
+.loading-modal-container .loader-container #pgring {
+  transform: translate(0);
+}
+.button {
+  width: 50%;
+}
+@media screen and (max-width: 800px) {
+  .contact-form .checkbox-form-group input:checked + label:after {
+    left: 2%;
+  }
+  .contact-form .form-control {
+    padding: 1rem;
+  }
+  .contact-form .form-control::placeholder {
+    font-size: 0.8rem;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .button,
+  .button .btn {
+    width: 100% !important;
+  }
+  .contact-form .form-label {
+    font-size: 0.8rem;
+  }
+  .contact-form .form-control {
+    font-size: 0.8rem;
+    padding: 0.2rem;
+  }
+  .contact-form .checkbox-form-group input:checked + label:after {
+    left: 2.5%;
+  }
+  .contact-form .modal-header h3 {
+    font-size: 1.5rem;
+  }
+}

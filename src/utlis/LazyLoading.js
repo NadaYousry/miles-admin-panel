@@ -30,3 +30,9 @@ export const FAQsPage = React.lazy(() =>
 export const Loader = React.lazy(() =>
   import("./../components/Loader")
 );
+export const AdminAboutPage = React.lazy(() =>
+  import("./../containers/AdminAboutPage")
+);
+export const AdminClassesPage = React.lazy(() =>
+  import("./../containers/AdminClassesPage")
+);

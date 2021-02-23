@@ -7,6 +7,7 @@ import Message from "../Message";
 import "./style.css";
 const ContactFromModal = ({ handleClose, openModal }) => {
   const [selectOther, setSelectOther] = useState(false);
+  const [sucessMessage, setSucessMessage] = useState(false);
   const [loader, setLoader] = useState(false);
   const [contactData, setContactData] = useState({
     firstName: "",
@@ -18,7 +19,6 @@ const ContactFromModal = ({ handleClose, openModal }) => {
     knowTraning: [],
     opinion: "",
   });
-  const [sucessMessage, setSucessMessage] = useState(false);
   const toggleSelectOtherCheckBox = () => {
     if (selectOther) {
       setSelectOther(false);
@@ -243,7 +243,7 @@ const ContactFromModal = ({ handleClose, openModal }) => {
     );
   };
   const renderSucessMessage = () => {
-    return <Message />;
+    return <Message title={'Thank You!'} description={'Your submission has been received. You Will be Contacted Shortly'}/>;
   };
   return (
     <>

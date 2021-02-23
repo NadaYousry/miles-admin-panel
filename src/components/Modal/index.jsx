@@ -3,6 +3,7 @@ import { Button, Modal } from "react-bootstrap";
 import SocialMediaShare from "../SocialMediaShare";
 import "./style.css";
 const ModalComponent = ({
+  content,
   handleClose,
   openModal,
   image,
@@ -34,6 +35,7 @@ const ModalComponent = ({
           <SocialMediaShare />
           </>
           }
+          {content&&content}
         </Modal.Body>
       </Modal>
     </>

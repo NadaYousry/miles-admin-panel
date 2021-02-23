@@ -12,7 +12,7 @@ const FeaturedCard = () => {
   const featuredData = [
     {
       name: "Footwork Patterns",
-      type: "Groups",
+      type: "Tennis",
       for: "Kids | 4-7",
       description:
         "Improve with other players in a similar skill set and a fun envoronment.",
@@ -22,7 +22,7 @@ const FeaturedCard = () => {
     },
     {
       name: "Match fitness",
-      type: "Private",
+      type: "Tennis",
       for: "Adults | 18+",
       description:
         "Get one on one private instruction. Improve faster working on specific skills.",
@@ -32,7 +32,7 @@ const FeaturedCard = () => {
     },
     {
       name: "Match fitness",
-      type: "Private",
+      type: "pilates",
       for: "Adults | 18+",
       description:
         "Get one on one private instruction. Improve faster working on specific skills.",
@@ -42,7 +42,7 @@ const FeaturedCard = () => {
     },
     {
       name: "Match fitness",
-      type: "Private",
+      type: "pilates",
       for: "Adults | 18+",
       description:
         "Get one on one private instruction. Improve faster working on specific skills.",

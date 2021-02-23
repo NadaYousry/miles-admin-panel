@@ -1,0 +1,88 @@
+.column-heading h3 {
+  font-size: 1rem;
+  color: var(--white);
+  font-family: var(--boldFont);
+}
+.class-card {
+  text-align: left;
+}
+.class-card .name {
+  font-family: var(--boldFont);
+  font-size: 0.9rem;
+}
+.class-card .place {
+  color: var(--textGray);
+  font-size: 0.85rem;
+}
+.class-card .user {
+  color: var(--textGray);
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+}
+.class-card .price,
+.setting {
+  color: var(--black);
+  font-family: var(--boldFont);
+  margin: 0;
+  position: relative;
+}
+.setting:hover {
+  cursor: pointer;
+}
+
+.class-card .circle {
+  height: 10px;
+  width: 10px;
+  border-radius: 50%;
+}
+.option-container {
+  padding: 5%;
+  width: 50px;
+  position: absolute;
+  z-index: 200;
+  box-shadow: 0 10px 20px var(--borderGray);
+}
+.options {
+  width: 100%;
+  font-size: 0.8rem;
+  text-align: center;
+}
+.drag-and-drop-container .dropdown-toggle.btn.btn-primary {
+  border-color: transparent;
+  justify-content: space-between !important;
+  font-family: var(--boldFont);
+  margin-left: auto !important;
+}
+.controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 3% !important;
+}
+.controls .add-new-task,
+.controls .add-new-task .green-btn {
+  margin-right: auto !important;
+  margin-left: 0 !important;
+}
+.add-new-task,
+.sort {
+  width: 40%;
+}
+h3.Potential {
+  background-color: var(--textGray);
+}
+h3.Upcoming {
+  background-color: var(--darkBlue);
+}
+h3.Progress {
+  background-color: var(--green);
+}
+h3.Completed {
+  background-color: var(--red);
+}
+@media screen and (max-width: 425px) {
+  .add-new-task {
+    width: 50%;
+  }
+}

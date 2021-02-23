@@ -7,7 +7,7 @@ import Loader from "../../components/Loader";
 const HomePageBodyContainer = ({ isMobileScreen }) => {
   return (
     <>
-      <div className="home-container container py-5 px-4 " id="home-container">
+      <div className="home-container container pt-5  px-4 " id="home-container">
         <div className="container">
           <div className="row mb-4">
             <div className="col-12 col-lg-4">

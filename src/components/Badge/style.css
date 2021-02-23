@@ -57,7 +57,16 @@
     text-align: center;
     margin-bottom: 4% !important;
     margin-top: 4% !important;
-    padding: 3% 5%;
+    -moz-padding-inline: 5%;
+    -ms-padding-inline: 5%;
+    -o-padding-inline: 5%;
+    -webkit-padding-inline: 5%;
+    -moz-padding-block: 3%;
+    -ms-padding-block: 3%;
+    -o-padding-block: 3%;
+    -webkit-padding-block: 3%;
+    padding-inline: 5%;
+    padding-block: 3%;
     border-radius: 6px;
   }
 }

@@ -14,7 +14,7 @@ const BadgeComponent = ({ type, text, theme }) => {
       <img src={type==="date"?DateIcon:TimeIcon} alt="time icon" className="w-100" />
     </span>
     }
-    <span className={` ${theme === "orange"?"":"info-container"} d-block`}>
+    <span className={` ${theme === "orange"?"":"info-container"}`}>
       <span>{text}</span>
     </span>
   </Badge>

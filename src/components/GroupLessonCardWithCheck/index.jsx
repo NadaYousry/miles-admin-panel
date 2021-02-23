@@ -4,6 +4,11 @@ import BadgeComponent from "../Badge";
 import ButtonComponent from "../Button";
 import CheckBox from "../CheckBox";
 import SelectMenuWithImage from "../SelectMenuWithImage";
+import Coach1 from "../../assets/images/coachs/1.png";
+import Coach2 from "../../assets/images/coachs/2.png";
+import Coach5 from "../../assets/images/coachs/5.png";
+import Coach3 from "../../assets/images/coachs/3.png";
+import CircleedImageContainer from "../CircleedIconContainer copy";
 import "./style.css";
 const GroupLessonCardWithCheck = ({
   lesson,
@@ -11,6 +16,50 @@ const GroupLessonCardWithCheck = ({
   index,
   length,
 }) => {
+  
+  const coachs = [
+    {
+      coachName: "Peter Andrews",
+      id: 1,
+      image: Coach1,
+    },
+    {
+      coachName: "Jeff Bridges",
+      id: 2,
+      image: Coach2,
+    },
+    {
+      coachName: "Miles Blackman",
+      id: 3,
+      image: Coach3,
+    },
+    {
+      coachName: "Miles Blackman",
+      id: 4,
+      image: Coach3,
+    },
+    {
+      coachName: "Jeff Bridges",
+      id: 5,
+      image: Coach5,
+    },
+    {
+      coachName: "Peter Andrews",
+      id: 6,
+      image: Coach2,
+    },
+    {
+      coachName: "Jeff Bridges",
+      id: 7,
+      image: Coach2,
+    },
+    {
+      coachName: "Jeff Bridges",
+      id: 8,
+      image: Coach1,
+    },
+  ];
+
   return (
     <div className={"group-lessons-check-box group-lessons-container mb-3"}>
       {/* desktop screen card header */}
@@ -179,7 +228,7 @@ const GroupLessonCardWithCheck = ({
               </div>
             </div>
           </div>
-          {index + 1 === length && <SelectMenuWithImage />}
+          {index + 1 === length && <SelectMenuWithImage coachs={coachs} />}
         </Card.Body>
       </Card>
     </div>
