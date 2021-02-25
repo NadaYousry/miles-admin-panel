@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, {  useEffect, useState } from "react";
 import useWindowResize from "../../cutomHooks/useWindowResize";
 import { NavLink, Redirect, Route, Switch } from "react-router-dom";
 import * as LazyComponents from "./../../utlis/LazyLoading";

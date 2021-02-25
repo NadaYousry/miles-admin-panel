@@ -6,6 +6,10 @@
 .class-card {
   text-align: left;
 }
+.class-card .checkbox-container,
+.class-card .checkbox-label-container label {
+  margin: 0 !important;
+}
 .class-card .name {
   font-family: var(--boldFont);
   font-size: 0.9rem;
@@ -101,9 +105,6 @@ h3.Completed {
 .dropDown-list {
   font-size: 0.75rem;
   /* font-family: var(--boldFont); */
-}
-.react-datepicker-wrapper {
-  width: 100%;
 }
 
 @media screen and (max-width: 740px) {

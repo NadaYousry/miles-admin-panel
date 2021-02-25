@@ -101,14 +101,11 @@
     height: 140px;
     top: -208%;
   }
-  .group-lessons-check-box .form-group input:checked + label:after {
-    left: 52%;
-  }
   .group-lessons-check-box .form-group label {
     margin-left: 100%;
   }
   .mobile-screen .heading-info {
-    width: 95%;
+    width: 100%;
     margin: 0;
   }
   .mobile-screen .single-check-box-row {

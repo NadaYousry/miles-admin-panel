@@ -2,21 +2,19 @@ import React from "react";
 import { Card } from "react-bootstrap";
 import BadgeComponent from "../Badge";
 import ButtonComponent from "../Button";
-import CheckBox from "../CheckBox";
 import SelectMenuWithImage from "../SelectMenuWithImage";
 import Coach1 from "../../assets/images/coachs/1.png";
 import Coach2 from "../../assets/images/coachs/2.png";
 import Coach5 from "../../assets/images/coachs/5.png";
 import Coach3 from "../../assets/images/coachs/3.png";
-import CircleedImageContainer from "../CircleedIconContainer copy";
 import "./style.css";
+import CheckBox from "../CheckBox";
 const GroupLessonCardWithCheck = ({
   lesson,
   isMobileScreen,
   index,
   length,
 }) => {
-  
   const coachs = [
     {
       coachName: "Peter Andrews",
@@ -100,6 +98,8 @@ const GroupLessonCardWithCheck = ({
             </div>
             <div className="d-flex align-items-center justify-content-center">
               <CheckBox
+                name="clubIntrest"
+                type="checkbox"
                 option={lesson.id}
                 showOptions={false}
                 theme={"green"}
@@ -146,9 +146,11 @@ const GroupLessonCardWithCheck = ({
                 </div>
                 <div className=" d-flex align-items-center justify-content-center">
                   <CheckBox
-                    option={lesson.id}
                     showOptions={false}
-                    theme={"green"}
+                    option={lesson.id}
+                    name="knowTraning"
+                    type="checkobx"
+                    theme="green"
                   />
                 </div>
               </div>

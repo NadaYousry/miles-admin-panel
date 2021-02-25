@@ -1,6 +1,6 @@
 import React from "react";
 import PrivateLessonCard from "../PrivateLessonCard";
-import DontFoundYouNeedCard from "../DontFoundYouNeedCard";
+import DonotFoundYouNeedCard from "../DonotFoundYouNeedCard";
 import TraineeImage from "./../../assets/images/private-lessons/Bitmap.png";
 import "./style.css";
 const PrivateLessonCardContainer = ({ isMobileScreen,find }) => {
@@ -81,7 +81,7 @@ const PrivateLessonCardContainer = ({ isMobileScreen,find }) => {
           </div>
         );
       })}
-      {find && <DontFoundYouNeedCard isMobileScreen={isMobileScreen} />}
+      {find && <DonotFoundYouNeedCard isMobileScreen={isMobileScreen} />}
     </div>
   );
 };

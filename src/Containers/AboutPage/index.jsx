@@ -12,7 +12,7 @@ import CircledIconContainer from "../../components/CircleedIconContainer";
 import ReviewCardContainer from "../../components/ReviewCardContainer";
 import ReviewWithProgress from "../../components/ReviewWithProgress";
 import FeaturedCard from "../../components/FeaturedCard";
-import FAQs from "../../components/FAQs/FAQs";
+import FAQs from "../../components/FAQs";
 import "./style.css";
 import { Link } from "react-router-dom";
 const AboutPage = ({ isMobileScreen }) => {

@@ -34,7 +34,7 @@
 }
 @media screen and (max-width: 500px) {
   .admin-panel-container .date-and-time-info .time-date-container::after {
-    left: 84%;
+    left: 86%;
   }
   .admin-panel-container .date-and-time-info .time-date-container .badge {
     margin-top: 2%;
@@ -44,6 +44,6 @@
 }
 @media screen and (max-width: 425px) {
   .admin-panel-container .date-and-time-info .time-date-container::after {
-    left: 80%;
+    left: 83%;
   }
 }

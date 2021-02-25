@@ -2,6 +2,10 @@
 .contact-form .single-check-box-row {
   border: none;
 }
+
+.contact-form .checkbox-form-group label span {
+  margin-left: 2px;
+}
 .contact-form .form-data {
   margin-bottom: 3%;
 }
@@ -37,8 +41,8 @@
 .loading-modal-container .loader-container #pgring {
   transform: translate(0);
 }
-.contact-form .styled-checkbox {
-  border: 1px solid var(--green);
+.button {
+  width: 50%;
 }
 @media screen and (max-width: 800px) {
   .contact-form .form-control {
@@ -50,6 +54,10 @@
 }
 
 @media screen and (max-width: 500px) {
+  .button,
+  .button .btn {
+    width: 100% !important;
+  }
   .contact-form .form-label {
     font-size: 0.8rem;
   }
@@ -57,6 +65,7 @@
     font-size: 0.8rem;
     padding: 0.2rem;
   }
+
   .contact-form .modal-header h3 {
     font-size: 1.5rem;
   }

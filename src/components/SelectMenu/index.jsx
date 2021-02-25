@@ -2,8 +2,8 @@ import React, { useState, useEffect } from "react";
 import { Accordion, Card, Form } from "react-bootstrap";
 import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import "./style.css";
 import CheckBox from "../CheckBox";
+import "./style.css";
 const SelectMenuComponent = ({ filters }) => {
   const [isOpen, setIsOpen] = useState(false);
   const onToggleAccordion = (e) => {
@@ -37,7 +37,13 @@ const SelectMenuComponent = ({ filters }) => {
             {filters.map((filter, index) => {
               return (
                 <div key={index}>
-                  <CheckBox option={filter.option} showOptions={true} theme={''}/>
+                  <CheckBox
+                    name="clubIntrest"
+                    type="checkbox"
+                    option={filter.option}
+                    showOptions={true}
+                    theme={""}
+                  />
                 </div>
               );
             })}

@@ -5,34 +5,44 @@ import { faUserAlt, faPlus } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import DropDownMenu from "../../components/DropDownMenu";
 import ButtonComponent from "../../components/Button";
-import DatePicker from "react-datepicker";
-
-import "react-datepicker/dist/react-datepicker.css";
-import "./style.css";
-import AddClassFromModal from "../../components/AddClassFromModal";
 import { ColumnContext } from "../AdminPanel";
-import CheckBoxStyledWithLabel from "../../components/CheckBoxStyledWithLabel";
+import CheckBox from "../../components/CheckBox";
+import AddClassFrom from "../../components/AddClassFrom";
+import "./style.css";
+import ContactFromModal from "../../components/ContactFromModal";
 
 function AdminClassesPage() {
   const [openModal, setOpenModal] = useState(false);
-  const [selectedName, setSelectedName] = useState("");
-  const [selectedStatusName, setSelectedStatusName] = useState("");
-  const [startDate, setStartDate] = useState(new Date());
+  const [activityName, setActivityName] = useState("");
+  const [statusName, setStatusName] = useState("");
+  const [dayName, setDayName] = useState("");
+  
 
-  const handleCloseModal = () => setOpenModal(false);
+const [sucessMessage, setSucessMessage] = useState(false);
+const [loader, setLoader] = useState(false);
+  const handleCloseModal = () => {setOpenModal(false) ;setSucessMessage(false)};
   const handleOpenModal = () => setOpenModal(true);
   let [columnsFromBackend, setColumnsFromBackend] = useContext(ColumnContext);
   const [columns, setColumns] = useState(columnsFromBackend);
   const [isDragged, setIsDragged] = useState(false);
   const selectStatus = [
     { color: "#6abf48", option: "Active" },
-    { color: "#ebef04", option: "Soon" },
+    { color: "#ebef04", option: "Ending Soon" },
     { color: "#d80c05", option: "Completed" },
   ];
   const selectActivities = [
     { option: "Tennis" },
     { option: "Pilate" },
     { option: "Fitness" },
+  ];
+  const days = [
+    { option: "Monday" },
+    { option: "Tuesday" },
+    { option: "Wednesday" },
+    { option: "Thuresday" },
+    { option: "Friday" },
+    { option: "Saturday" },
+    { option: "Sunday" },
   ];
   useEffect(() => {
     setColumns(columnsFromBackend);
@@ -79,7 +89,25 @@ function AdminClassesPage() {
       });
     }
   };
-
+// ////////////////////////////
+const handleCloseButton = () => {
+  handleCloseModal();
+  setTimeout(() => {
+    setSucessMessage(false);
+  }, 500);
+};
+const renderModalContent = ()=>{
+  return(
+    
+    <AddClassFrom
+    handleCloseButton={handleCloseButton}
+    handleClose={handleCloseModal}
+    setSucessMessage={setSucessMessage}
+    setLoader={setLoader}
+     />
+  )
+}
+///////////////////////////////
   return (
     <>
       <section className="container drag-and-drop-container">
@@ -96,21 +124,35 @@ function AdminClassesPage() {
           </div>
 
           <div className="filter-container col-12 col-md-5 col-lg-5 d-flex">
-            <p>filter: </p>
+            <p>filter: </p>{" "}
             <div className="dropDown-menu">
-              <DatePicker
-                className="dropdown-toggle btn btn-primary date-picker"
-                selected={startDate}
-                onChange={(date) => setStartDate(date)}
-                isClearable
-                placeholderText="Select Day"
-              />
+              <DropdownButton
+                id="dropdown-item-button"
+                drop="down"
+                title={dayName ? dayName : "Days"}
+              >
+                {days.map((option, index) => {
+                  return (
+                    <div key={index}>
+                      <Dropdown.Item
+                        as="li"
+                        onClick={() => {
+                          setDayName(option.option);
+                        }}
+                        className="dropDown-list"
+                      >
+                        <span> {option.option}</span>
+                      </Dropdown.Item>
+                    </div>
+                  );
+                })}
+              </DropdownButton>
             </div>
             <div className="dropDown-menu">
               <DropdownButton
                 id="dropdown-item-button"
                 drop="down"
-                title={selectedName ? selectedName : "Activity"}
+                title={activityName ? activityName : "Activity"}
               >
                 {selectActivities.map((option, index) => {
                   return (
@@ -118,7 +160,7 @@ function AdminClassesPage() {
                       <Dropdown.Item
                         as="li"
                         onClick={() => {
-                          setSelectedName(option.option);
+                          setActivityName(option.option);
                         }}
                         className="dropDown-list"
                       >
@@ -135,7 +177,7 @@ function AdminClassesPage() {
             <div className="dropDown-menu">
               <DropdownButton
                 id="dropdown-item-button"
-                title={selectedStatusName ? selectedStatusName : "Status"}
+                title={statusName ? statusName : "Status"}
               >
                 {selectStatus.map((option, index) => {
                   return (
@@ -143,7 +185,7 @@ function AdminClassesPage() {
                       <Dropdown.Item
                         as="li"
                         onClick={() => {
-                          setSelectedStatusName(option.option);
+                          setStatusName(option.option);
                         }}
                         className="dropDown-list"
                       >
@@ -241,36 +283,44 @@ function AdminClassesPage() {
                                           }}
                                         >
                                           <div className="mb-0 d-flex align-items-start justify-content-between">
-                                            <p className="name mb-0">
-                                              {item.name}
-                                            </p>
-                                            <div
-                                              className="circle"
-                                              style={{
-                                                backgroundColor:
-                                                  item.status === "active"
-                                                    ? "#6abf48"
-                                                    : item.status ===
-                                                      "completed"
-                                                    ? "#d80c05"
-                                                    : "#ebef04",
-                                              }}
-                                            ></div>
-                                            
+                                            <div className="mb-0 d-flex align-items-center justify-content-between">
+                                              <div
+                                                className="circle mr-2"
+                                                style={{
+                                                  backgroundColor:
+                                                    item.status === "active"
+                                                      ? "#6abf48"
+                                                      : item.status ===
+                                                        "completed"
+                                                      ? "#d80c05"
+                                                      : "#ebef04",
+                                                }}
+                                              ></div>
+                                              <p className="name mb-0">
+                                                {item.name}
+                                              </p>
+                                            </div>
+                                            <div>
+                                              <CheckBox
+                                                showOptions={false}
+                                                option={item.id}
+                                                name="status"
+                                                type="checkbox"
+                                                theme='orange'
+                                              />
+                                            </div>
                                           </div>
                                           <div className="mb-2 d-flex align-items-start justify-content-between">
                                             <div className="time-and-date">
-                                              <p className="mb-0">{item.date}</p>
-                                              <p className="mb-0">{item.time}</p>
+                                              <p className="mb-0">
+                                                {item.date}
+                                              </p>
+                                              <p className="mb-0">
+                                                {item.time}
+                                              </p>
                                             </div>
-                                          <CheckBoxStyledWithLabel
-                                              showOptions={false}
-                                              option={item.id}
-                                              name="status"
-                                              type="checkbox"
-                                            />
                                           </div>
-                                          
+
                                           <div className="mb-2">
                                             <span className="place">
                                               {item.place}
@@ -282,7 +332,9 @@ function AdminClassesPage() {
                                                 icon={faUserAlt}
                                                 className=" mr-2"
                                               />
-                                              <p className="price mr-2">{item.registration_count}</p>
+                                              <p className="price mr-2">
+                                                {item.registration_count}
+                                              </p>
                                               <p className="price">{`${item.price}$`}</p>
                                             </div>
                                             <div className="setting">
@@ -315,7 +367,15 @@ function AdminClassesPage() {
         </div>
       </section>
 
-      <AddClassFromModal handleClose={handleCloseModal} openModal={openModal} />
+    {/************************************ start modal render *****************************************/}
+    <ContactFromModal
+     handleClose={handleCloseModal} 
+     openModal={openModal}
+    content={renderModalContent()}
+    loader={loader}
+    sucessMessage={sucessMessage}
+  />
+  {/************************************ end modal render *****************************************/}
     </>
   );
 }

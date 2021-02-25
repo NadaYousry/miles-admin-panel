@@ -1,0 +1,32 @@
+@import "./../../generalStyles/variables.css";
+.do-not-find-need-container * {
+  text-transform: none;
+}
+.do-not-find-need-container h3 {
+  text-align: left;
+  font-size: 1.25rem;
+  font-family: var(--boldFont);
+}
+.do-not-find-need-container .question-icon {
+  font-size: 1rem;
+}
+.do-not-find-need-container .contact-us {
+  color: var(--textGray);
+  font-size: 0.9rem;
+  text-align: left;
+}
+.do-not-find-need-container .card {
+  background-color: transparent;
+}
+
+@media screen and (max-width: 500px) {
+  .do-not-find-need-container h3 {
+    font-size: 1rem;
+  }
+  .do-not-find-need-container .question-icon {
+    font-size: 0.8rem;
+  }
+  .do-not-find-need-container .contact-us {
+    font-size: 0.9rem;
+  }
+}

@@ -1,5 +1,5 @@
 import React from 'react';
-import FAQs from '../../components/FAQs/FAQs';
+import FAQs from '../../components/FAQs';
 import "./style.css";
 const FAQsPage = ({isMobileScreen}) => {
   const faqsData = [

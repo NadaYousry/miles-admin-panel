@@ -61,6 +61,25 @@
   width: 40%;
   margin-left: auto;
 }
+
+.group-lessons-container .checkbox-label-container {
+  border-bottom: 1px solid var(--borderGray);
+  padding: 2% 1.5%;
+}
+.group-lessons-container label {
+  position: relative;
+  font-size: 0.9rem;
+}
+.group-lessons-container .checkbox-container {
+  position: absolute;
+  right: 0;
+  margin-right: 0 !important;
+}
+.group-lessons-container .checkbox-label-container label {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0;
+}
 @media screen and (max-width: 1024px) {
   .group-lessons-container .date-and-time-info {
     width: 55%;

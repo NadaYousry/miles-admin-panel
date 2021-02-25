@@ -1,6 +1,6 @@
 import React from "react";
 import GroupLessonCard from "../GroupLessonCard";
-import DontFoundYouNeedCard from "../DontFoundYouNeedCard";
+import DonotFoundYouNeedCard from "../DonotFoundYouNeedCard";
 import SelectMenuComponent from "../SelectMenu";
 import "./style.css";
 const GroupLessonCardContainer = ({ isMobileScreen }) => {
@@ -109,7 +109,7 @@ const GroupLessonCardContainer = ({ isMobileScreen }) => {
         );
       })}
 
-      <DontFoundYouNeedCard isMobileScreen={isMobileScreen} />
+      <DonotFoundYouNeedCard isMobileScreen={isMobileScreen} />
     </div>
   );
 };

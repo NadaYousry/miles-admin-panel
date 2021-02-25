@@ -1,0 +1,54 @@
+@import "./../../generalStyles/variables.css";
+.card-title {
+  letter-spacing: 0.52px;
+  font-size: 20px;
+  font-weight: CenturyGothic-Bold;
+  letter-spacing: 1px;
+  line-height: 1.5rem;
+}
+.faq .accordion > .card > .card-header {
+  border: none;
+  cursor: pointer;
+  background-color: var(--baleWhite);
+}
+h3 {
+  font-size: 16px;
+  text-align: left;
+}
+.faq .collapse {
+  background-color: var(--baleWhite);
+}
+
+.faq .accordion .card {
+  border: none;
+}
+.collapse .card-body {
+  border-radius: 7px;
+  overflow: hidden;
+  background-color: var(--white);
+  text-align: left;
+  font-size: 0.9rem;
+}
+.accordion .card-body {
+  font-size: 0.9rem;
+}
+.accordion-toggle {
+  position: relative;
+  z-index: 3;
+}
+.accordion h3 svg {
+  font-size: 0.7rem;
+}
+@media screen and (max-width: 786px) {
+  .accordion h3 {
+    font-size: 0.75rem;
+    line-height: 1.2rem;
+  }
+  .accordion h3 svg {
+    font-size: 0.7rem;
+  }
+  .collapse .card-body,
+  .accordion .card-body {
+    font-size: 0.7rem;
+  }
+}
