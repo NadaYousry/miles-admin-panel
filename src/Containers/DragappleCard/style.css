@@ -1,0 +1,12 @@
+@import "./../../generalStyles/variables.css";
+.activity-icons {
+  width: 85%;
+}
+@media screen and (max-width: 500px) {
+  .sub-heading {
+    text-align: center !important;
+  }
+  .activity-icons {
+    width: 100%;
+  }
+}

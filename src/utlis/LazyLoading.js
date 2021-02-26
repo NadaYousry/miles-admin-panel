@@ -36,3 +36,6 @@ export const AdminAboutPage = React.lazy(() =>
 export const AdminClassesPage = React.lazy(() =>
   import("./../containers/AdminClassesPage")
 );
+export const AdminCalendar = React.lazy(() =>
+  import("./../containers/AdminCalendar")
+);

@@ -1,0 +1,49 @@
+@import "./../../generalStyles/variables.css";
+.assign-coach-card {
+  border: 1px solid var(--borderGray);
+  border-radius: 0.25rem;
+}
+.image-container-and-slect {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.image-container {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.dropdown-menu-container .btn-primary,
+.dropdown-menu-container .btn-primary:hover,
+.dropdown-menu-container .btn-primary:focus,
+.show > .btn-primary.dropdown-toggle,
+.dropdown-menu-container .btn-primary.dropdown-toggle:focus,
+.dropdown-menu-container .show > .btn-primary.dropdown-toggle:focus,
+.btn-primary:not(:disabled):not(.disabled):active:focus,
+.btn-primary:not(:disabled):not(.disabled):active,
+.dropdown-menu-container .dropdown-toggle::after {
+  background-color: var(--white);
+  border-color: transparent;
+  color: var(--black);
+  box-shadow: none;
+}
+.dropdown-menu-container .dropdown-toggle::after {
+  content: "";
+  border: none;
+}
+.dropdown-menu-container .btn-primary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0;
+}
+.dropdown-menu-container .dropdown-item {
+  font-size: 0.8rem;
+}
+.dropdown-menu-container .dropdown-menu {
+  min-width: 5rem;
+}
+@media screen and (max-width: 500px) {
+}
