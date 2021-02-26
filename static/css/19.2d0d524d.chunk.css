@@ -1,2 +1,0 @@
-.home-container{background-color:var(--baleWhite);border-radius:5px;z-index:4;margin-top:-3%;position:relative;width:60%}.heading,.sub-heading{font-size:20px;font-family:var(--boldFont);line-height:1.5rem}.sub-heading{letter-spacing:1px}@media screen and (max-width:768px){.home-container{width:100%}}@media screen and (max-width:500px){.home-container{margin-top:-10%;padding-left:1%!important;padding-right:1%!important;width:95%}.video-play-icon{display:none}.heading{text-align:center!important;font-size:17px}}
-/*# sourceMappingURL=19.2d0d524d.chunk.css.map */
