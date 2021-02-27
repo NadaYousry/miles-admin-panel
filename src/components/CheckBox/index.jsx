@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import CheckBoxInput from "./../CheckBoxInput";
 import './style.css';
 
-const CheckBox = ({showOptions , option , type  ,name , toggleSelectOtherCheckBox , theme}) => {
+const CheckBox = ({showOptions  ,value, option , type  ,name , toggleSelectOtherCheckBox , theme}) => {
   const [checked, setChecked] = useState(false);
 
   const handleCheckboxChange = (event) => {
@@ -15,7 +15,7 @@ const CheckBox = ({showOptions , option , type  ,name , toggleSelectOtherCheckBo
   return (
     <div className="checkbox-label-container">
       <label>
-        <CheckBoxInput theme={theme} checked={checked} onChange={handleCheckboxChange} name={name} type={type}/>
+        <CheckBoxInput theme={theme} checked={checked} onChange={handleCheckboxChange} name={name} type={type} value={value}/>
         {showOptions&&<span >{option}</span>}
       </label>
     </div>

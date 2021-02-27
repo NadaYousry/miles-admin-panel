@@ -44,6 +44,15 @@
 .button {
   width: 50%;
 }
+.MuiInput-underline:after {
+  border-color: var(--darkGreen) !important;
+}
+.MuiFormLabel-root.Mui-focused {
+  color: var(--darkGreen) !important;
+}
+.MuiFormControl-root {
+  width: 100%;
+}
 @media screen and (max-width: 800px) {
   .contact-form .form-control {
     padding: 1rem;

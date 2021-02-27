@@ -1,9 +1,9 @@
 import React from "react";
-import {  Draggable, Droppable } from "react-beautiful-dnd";
+import { Draggable, Droppable } from "react-beautiful-dnd";
 import { Card } from "react-bootstrap";
 import DragappleCard from "../DragappleCard";
 
-const DroppableColumn = ({columnId , column}) => {
+const DroppableColumn = ({ columnId, column }) => {
   return (
     <>
       <Droppable droppableId={columnId} key={columnId}>
@@ -15,12 +15,12 @@ const DroppableColumn = ({columnId , column}) => {
                 style={{ overflow: "auto" }}
               >
                 <h3
-                  className={`m-0 ${column.name}`}
+                  className={`m-0 ${column.title}`}
                   style={{
                     padding: 10,
                   }}
                 >
-                  {column.name}
+                  {column.title}
                 </h3>
               </div>
               <Card
@@ -44,6 +44,7 @@ const DroppableColumn = ({columnId , column}) => {
                       {(provided, snapshot) => {
                         return (
                           <DragappleCard
+                            isEdit={true}
                             snapshot={snapshot}
                             item={item}
                             {...provided}
