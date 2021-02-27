@@ -1,7 +1,8 @@
 import React, { useContext, useEffect, useState } from "react";
 import { DragDropContext } from "react-beautiful-dnd";
-import { faPlus } from "@fortawesome/free-solid-svg-icons";
+import { faPlus , faColumns  , faListOl } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 import ButtonComponent from "../../components/Button";
 import { ColumnContext } from "../AdminPanel";
 import AddClassFrom from "../../components/AddClassFrom";
@@ -9,8 +10,10 @@ import DroppableColumn from "../DroppableColumn";
 import ContactFromModal from "../../components/ContactFromModal";
 import DropDown from "../../components/DropDown";
 import "./style.css";
+import { Paper, Tooltip } from "@material-ui/core";
 
 function AdminClassesPage() {
+  const[isList   , setIsList]=useState(false)
   const [openModal, setOpenModal] = useState(false);
   const [sucessMessage, setSucessMessage] = useState(false);
   const [loader, setLoader] = useState(false);
@@ -108,7 +111,7 @@ function AdminClassesPage() {
   /************************************ end handel modal fun *****************************************/
   return (
     <>
-      <section className="container drag-and-drop-container">
+      <div className=" drag-and-drop-container p-5">
         <div className="controls row">
           <div className="add-container col-12 col-lg-4 col-md-4 mb-2">
             <div className={"add-new-task"}>
@@ -122,7 +125,7 @@ function AdminClassesPage() {
           </div>
 
           <div className="filter-container col-12 col-md-5 col-lg-5 d-flex">
-            <p>filter: </p>{" "}
+            <p>filter: </p>
             <div className="dropDown-menu">
               <DropDown selecteItemsArray={days} name="Days" />
             </div>
@@ -137,9 +140,23 @@ function AdminClassesPage() {
             </div>
           </div>
         </div>
+        <div className="switch-view mb-5">
+          <span className="mr-2">Switch View : </span>
+          <Tooltip title="Column" aria-label="Column"  placement="top" onClick={()=>{setIsList(false)}}>
+          <Paper className="icon-wrapper mr-2">
+          <FontAwesomeIcon icon={faColumns} className="switch-view-icon"/>
+          </Paper>
+          </Tooltip>
+          <Tooltip title="List" aria-label="List"  placement="top" onClick={()=>{setIsList(true)}}>
+          <Paper className="icon-wrapper mr-2">
+          <FontAwesomeIcon icon={faListOl} className="switch-view-icon"/>
+          </Paper>
+          </Tooltip>
+        </div>
         <div
           style={{
-            display: "flex",
+            display: isList ? "block" : "flex",
+            textAlign: isList ? "left" : "auto",
             width: "100%",
             overflowX: "auto",
             justifyContent: "space-between",
@@ -161,15 +178,15 @@ function AdminClassesPage() {
                   }}
                   key={columnId}
                 >
-                  <div style={{ marginLeft: 8, marginRight: 8 }}>
-                    <DroppableColumn columnId={columnId} column={column} />
+                  <div style={{ marginLeft: 8, marginRight: 8  , width:isList?'100%':'auto'}}>
+                    <DroppableColumn columnId={columnId} column={column} isList={isList}/>
                   </div>
                 </div>
               );
             })}
           </DragDropContext>
         </div>
-      </section>
+      </div>
       {/************************************ start modal render *****************************************/}
       <ContactFromModal
         handleClose={handleCloseModal}

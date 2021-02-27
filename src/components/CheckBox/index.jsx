@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import CheckBoxInput from "./../CheckBoxInput";
 import './style.css';
 
-const CheckBox = ({showOptions  ,value, option , type  ,name , toggleSelectOtherCheckBox , theme}) => {
+const CheckBox = ({showOptions , option , type  ,name  , value, toggleSelectOtherCheckBox , theme}) => {
   const [checked, setChecked] = useState(false);
 
   const handleCheckboxChange = (event) => {

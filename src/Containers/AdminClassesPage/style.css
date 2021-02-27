@@ -3,9 +3,34 @@
   color: var(--white);
   font-family: var(--boldFont);
 }
+.switch-view {
+  text-align: left;
+  display: flex;
+  align-items: center;
+  font-size: 0.9rem;
+}
+.switch-view .icon-wrapper {
+  padding: 0.5% 1%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease-in-out;
+}
+.switch-view .icon-wrapper:hover {
+  color: var(--green);
+}
 @media screen and (max-width: 740px) {
   .controls .add-new-task,
   .controls .add-new-task .green-btn {
     width: 100%;
+  }
+}
+@media screen and (max-width: 500px) {
+  .drag-and-drop-container {
+    padding: 2% !important;
+  }
+  .switch-view .icon-wrapper {
+    padding: 1% 5%;
   }
 }

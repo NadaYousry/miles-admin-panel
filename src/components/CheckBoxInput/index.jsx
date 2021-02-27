@@ -1,10 +1,11 @@
 import React from "react";
 import "./style.css";
-const CheckBoxInput = ({ checked,  theme ,  ...props }) => (
+const CheckBoxInput = ({ checked, name , theme ,  ...props }) => (
   <div className={`checkbox-container mr-2 ${theme?theme:""}`}>
     <input
       className="check-input"
       defaultChecked={checked}
+      name={name}
       {...props}
     />
     <div className={`styled-checkbox ${checked?"checked" :""}`} checked={checked} >

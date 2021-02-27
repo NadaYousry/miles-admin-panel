@@ -37,3 +37,9 @@
 .Resize-verticalEnd-57 {
   top: 100%;
 }
+.makeStyles-container-23 {
+  overflow-y: unset !important;
+}
+.makeStyles-resourceContainer-255 {
+  display: none !important;
+}

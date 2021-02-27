@@ -129,15 +129,17 @@ const AdminPanel = () => {
       </div>
 
       <Switch>
-              <Route path={`/miles-admin-panel/admin/about`}>
-          <Suspense fallback={<Loader />}>
-            <LazyComponents.AdminAboutPage isMobileScreen={isMobileScreen} />
-          </Suspense>
-        </Route>
         <ItemsContext.Provider value={[itemsFromBackend, setItemsFromBackend]}>
           <ColumnContext.Provider
             value={[columnsFromBackend, setColumnsFromBackend]}
           >
+          <Route path={`/miles-admin-panel/admin/about`}>
+              <Suspense fallback={<Loader />}>
+                <LazyComponents.AdminAboutPage
+                  isMobileScreen={isMobileScreen}
+                />
+              </Suspense>
+            </Route>
           <Route path={`/miles-admin-panel/admin/classes`}>
               <Suspense fallback={<Loader />}>
                 <LazyComponents.AdminClassesPage />
@@ -148,9 +150,9 @@ const AdminPanel = () => {
                 <LazyComponents.AdminCalendar />
               </Suspense>
             </Route>
+            <Redirect exact from="/miles-admin-panel" to="admin/about" />
           </ColumnContext.Provider>
         </ItemsContext.Provider>
-              <Redirect exact from="/miles-admin-panel" to="admin/about" />
       </Switch>
     </div>
   );

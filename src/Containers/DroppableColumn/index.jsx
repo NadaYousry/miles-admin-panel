@@ -2,8 +2,9 @@ import React from "react";
 import { Draggable, Droppable } from "react-beautiful-dnd";
 import { Card } from "react-bootstrap";
 import DragappleCard from "../DragappleCard";
+import ListDragappleCard from "../ListDragappleCard";
 
-const DroppableColumn = ({ columnId, column }) => {
+const DroppableColumn = ({ columnId, column , isList }) => {
   return (
     <>
       <Droppable droppableId={columnId} key={columnId}>
@@ -17,7 +18,7 @@ const DroppableColumn = ({ columnId, column }) => {
                 <h3
                   className={`m-0 ${column.title}`}
                   style={{
-                    padding: 10,
+                    padding: isList?5:10,
                   }}
                 >
                   {column.title}
@@ -28,10 +29,11 @@ const DroppableColumn = ({ columnId, column }) => {
                 ref={provided.innerRef}
                 style={{
                   background: snapshot.isDraggingOver ? "#6abf4836" : "white",
-                  width: 250,
+                  width: isList?'100%':250,
                   padding: 5,
                   overflow: "hidden",
-                  minHeight: 500,
+                  minHeight: isList?'50px':500,
+                  marginBottom:isList&&'1%',
                 }}
               >
                 {column?.items?.map((item, index) => {
@@ -43,12 +45,22 @@ const DroppableColumn = ({ columnId, column }) => {
                     >
                       {(provided, snapshot) => {
                         return (
+                          <>
+                         { isList ?<ListDragappleCard
+                          isEdit={true}
+                          snapshot={snapshot}
+                          item={item}
+                          {...provided}
+                        />
+                          : 
                           <DragappleCard
                             isEdit={true}
                             snapshot={snapshot}
                             item={item}
                             {...provided}
                           />
+                          }
+                          </>
                         );
                       }}
                     </Draggable>

@@ -1,0 +1,117 @@
+@import "./../../generalStyles/variables.css";
+.activity-icons {
+  width: 85%;
+}
+.class-card {
+  text-align: left;
+  cursor: move;
+}
+.class-card .checkbox-container,
+.class-card .checkbox-label-container label {
+  margin: 0 !important;
+}
+.class-card .name {
+  font-family: var(--boldFont);
+  font-size: 0.9rem;
+}
+.class-card .place {
+  color: var(--textGray);
+  font-size: 0.85rem;
+}
+.time-and-date {
+  color: var(--darkBlue);
+  font-size: 0.7rem;
+  font-family: var(--boldFont);
+}
+.class-card .user {
+  color: var(--textGray);
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+}
+.class-card .price,
+.setting {
+  color: var(--black);
+  font-family: var(--boldFont);
+  margin: 0;
+  position: relative;
+}
+.setting:hover {
+  cursor: pointer;
+}
+
+.circle {
+  height: 10px;
+  width: 10px;
+  border-radius: 50%;
+}
+.option-container {
+  padding: 5%;
+  width: 50px;
+  position: absolute;
+  z-index: 200;
+  box-shadow: 0 10px 20px var(--borderGray);
+}
+.options {
+  width: 100%;
+  font-size: 0.8rem;
+  text-align: center;
+}
+.drag-and-drop-container .dropdown-toggle.btn.btn-primary {
+  border-color: transparent;
+  justify-content: space-between !important;
+  /* font-family: var(--boldFont); */
+  margin-left: auto !important;
+}
+.controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 3% !important;
+}
+.controls .add-new-task,
+.controls .add-new-task .green-btn {
+  margin-right: auto !important;
+  margin-left: 0 !important;
+  width: 80%;
+}
+h3.Potential {
+  background-color: var(--textGray);
+}
+h3.Upcoming {
+  background-color: var(--darkBlue);
+}
+h3.Progress {
+  background-color: var(--green);
+}
+h3.Completed {
+  background-color: var(--red);
+}
+.dropDown-menu,
+.date-picker {
+  width: 100%;
+  margin-left: 1%;
+  text-align: left;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.date-picker::placeholder {
+  color: var(--black);
+}
+.dropDown-menu .dropdown,
+.dropDown-menu .dropdown-toggle.btn.btn-primary {
+  width: 100% !important;
+}
+.dropDown-list {
+  font-size: 0.75rem;
+  /* font-family: var(--boldFont); */
+}
+
+@media screen and (max-width: 500px) {
+  .sub-heading {
+    text-align: center !important;
+  }
+  .activity-icons {
+    width: 100%;
+  }
+}

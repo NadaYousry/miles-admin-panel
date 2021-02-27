@@ -21,6 +21,7 @@ const ImageUploader = ({ title }) => {
       fileObj.src = fileSrc;
       setImages([...images, fileObj]);
     };
+    console.log(images);
   };
   const deleteImage = (e, index) => {
     const newImagesArray = [...images];

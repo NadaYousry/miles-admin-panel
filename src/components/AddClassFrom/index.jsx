@@ -26,7 +26,7 @@ const AddClassFrom = ({ setSucessMessage, setLoader }) => {
   useEffect(() => {}, [itemsFromBackend, columnsFromBackend]);
   // submit form
   const onSumbitAddTask = (e) => {
-    console.log(e.target.status);
+    console.log(e.target.startDate.value);
     e.preventDefault();
     let taskData;
     taskData = {
