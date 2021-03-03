@@ -8,7 +8,6 @@ import { Card } from "react-bootstrap";
 import "./style.css";
 
 const DragappleCard = ({ snapshot, item, isEdit, ...provided }) => {
-  console.log(item, isEdit);
   return (
     <>
       {item && (
@@ -65,7 +64,7 @@ const DragappleCard = ({ snapshot, item, isEdit, ...provided }) => {
           </div>
           <div className="mb-2 d-flex align-items-start justify-content-between">
             <div className="time-and-date">
-              <p className="mb-0">{moment(item?.startDate).format("lll")}</p>
+              <p className="mb-0">{moment(item?.startDate).format("llll")}</p>
               {/* <p className="mb-0">{item?.time}</p> */}
             </div>
           </div>

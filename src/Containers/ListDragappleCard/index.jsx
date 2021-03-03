@@ -1,6 +1,4 @@
 import React from "react";
-import { faUserAlt } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import SettingCardDropDownMenu from "../../components/SettingCardDropDownMenu";
 import CheckBox from "../../components/CheckBox";
 import moment from "moment";
@@ -8,7 +6,6 @@ import { Card } from "react-bootstrap";
 import "./style.css";
 
 const ListDragappleCard = ({ snapshot, item, isEdit, ...provided }) => {
-  console.log(item, isEdit);
   return (
     <>
       {item && (
@@ -53,7 +50,7 @@ const ListDragappleCard = ({ snapshot, item, isEdit, ...provided }) => {
                 <p className="name mb-0">{item?.title}</p>
                 <div className="time-and-date">
                   <p className="mb-0">
-                    {moment(item?.startDate).format("lll")}
+                    {moment(item?.startDate).format('llll')}
                   </p>
                 </div>
               </div>

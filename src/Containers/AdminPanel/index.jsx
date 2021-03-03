@@ -61,43 +61,50 @@ const AdminPanel = () => {
       endDate: new Date(2021, 6, 18, 13, 35),
     },
   ]);
-  const [columnsFromBackend, setColumnsFromBackend] = useState({
-    potentialClassColumn: {
+  const [columnsFromBackend, setColumnsFromBackend] = useState([
+     {
+      id:'potentialClassColumn',
       title: "Potential Classes",
       items: itemsFromBackend,
     },
-    upcomingClassColumn: {
+     {
+       id:'upcomingClassColumn',
       title: "Upcoming",
       items: [],
     },
-    inProgressClassColumn: {
+     {
+      id:'inProgressClassColumn',
       title: "In Progress",
       items: [],
     },
-    doneClassColumn: {
+     {
+      id:'doneClassColumn',
       title: "Program Completed",
       items: [],
     },
-  });
+  ]);
   useEffect(() => {
-    setColumnsFromBackend({
-      potentialClassColumn: {
+    setColumnsFromBackend([
+       {
+        id:"potentialClassColumn" , 
         title: "Potential Classes",
-        items: columnsFromBackend.potentialClassColumn.items,
-      },
-      upcomingClassColumn: {
+        items: columnsFromBackend[0].items,
+      }, {
+        id:"upcomingClassColumn" , 
         title: "Upcoming",
-        items: columnsFromBackend.upcomingClassColumn.items,
+        items: columnsFromBackend[1].items,
       },
-      inProgressClassColumn: {
+       {
+        id:"inProgressClassColumn" , 
         title: "In Progress",
-        items: columnsFromBackend.inProgressClassColumn.items,
+        items: columnsFromBackend[2].items,
       },
-      doneClassColumn: {
+       {
+         id:"doneClassColumn" , 
         title: "Program Completed",
-        items: columnsFromBackend.doneClassColumn.items,
+        items: columnsFromBackend[3].items,
       },
-    });
+    ]);
   }, [itemsFromBackend]);
   const isMobileScreen = useWindowResize();
   return (

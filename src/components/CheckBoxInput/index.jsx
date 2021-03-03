@@ -8,7 +8,7 @@ const CheckBoxInput = ({ checked, name , theme ,  ...props }) => (
       name={name}
       {...props}
     />
-    <div className={`styled-checkbox ${checked?"checked" :""}`} checked={checked} >
+    <div className={`styled-checkbox ${checked?"checked" :""}`} >
       <svg
         className="checkbox-icon"
         viewBox="0 0 24 24"

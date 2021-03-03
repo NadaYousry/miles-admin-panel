@@ -22,7 +22,6 @@ import {  Paper } from "@material-ui/core";
 const AdminCalendar = () => {
   let [itemsFromBackend, setItemsFromBackend] = useContext(ItemsContext);
   const [data, setData] = useState(itemsFromBackend);
-  console.log(itemsFromBackend , data);
 
 useEffect(()=>{setData(itemsFromBackend)} ,[itemsFromBackend] )
   const commitChanges = ({ added, changed, deleted }) => {
